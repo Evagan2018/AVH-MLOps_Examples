@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       # Use the custom Docker image with the necessary tools and dependencies
-      image: ghcr.io/arm-software/avh-mlops/arm-mlops-docker-licensed:latest
+      image: ghcr.io/arm-software/avh-mlops/arm-mlops-docker-licensed:latest-amd64
       credentials:
         # Set the Docker image credentials using the actor and a GitHub token
         username: ${{ github.actor }}
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Checkout repository
         # Check out the repository containing the ML project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Set permissions for working directory __w
         # Set permissions for the working directory to avoid permission errors
