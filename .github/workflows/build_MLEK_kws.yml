@@ -12,6 +12,13 @@ on:
   # Trigger the workflow manually
   workflow_dispatch:
 
+
+# Minimal permissions required for pulling from GHCR in another repo/org
+permissions:
+  contents: read      # required for checkouts and many Actions
+  packages: read      # required to read/pull packages from GHCR
+
+
 jobs:
   run_test:
     runs-on: ubuntu-latest
